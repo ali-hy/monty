@@ -26,6 +26,7 @@ void unknown_instruction_error(char *opcode)
 void usage_error(void)
 {
 	fprintf(stderr, "USAGE: monty file\n");
+	exit(EXIT_FAILURE);
 }
 
 /**
