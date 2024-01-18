@@ -21,6 +21,14 @@ void (*opcode_f(char *opcode))(stack_t **stack, char **tokens)
 		return (add_instruction);
 	else if (strcmp(opcode, "nop") == 0)
 		return (NULL);
+	else if (strcmp(opcode, "sub") == 0)
+		return (sub_instruction);
+	else if (strcmp(opcode, "mul") == 0)
+		return (mul_instruction);
+	else if (strcmp(opcode, "div") == 0)
+		return (div_instruction);
+	else if (strcmp(opcode, "mod") == 0)
+		return (mod_instruction);
 
 	unknown_instruction_error(opcode);
 	return (NULL);

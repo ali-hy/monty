@@ -22,9 +22,9 @@
  */
 typedef struct stack_s
 {
-    int n;
-    struct stack_s *prev;
-    struct stack_s *next;
+	int n;
+	struct stack_s *prev;
+	struct stack_s *next;
 } stack_t;
 
 /**
@@ -37,8 +37,8 @@ typedef struct stack_s
  */
 typedef struct instruction_s
 {
-    char *opcode;
-    void (*f)(stack_t **stack, char **tokens);
+	char *opcode;
+	void (*f)(stack_t **stack, char **tokens);
 } instruction_t;
 
 /**
@@ -50,8 +50,8 @@ typedef struct instruction_s
  */
 typedef struct error_s
 {
-    int line_num;
-    char *message;
+	int line_num;
+	char *message;
 } error_t;
 
 /* UTILS */
@@ -86,16 +86,19 @@ int add(stack_t **);
 instruction_t *get_instruction(char **);
 int execute_instruction(instruction_t *);
 
-/* task 1 */
+/* general */
 void push_instruction(stack_t **stack, char **tokens);
 void push_usage_error(void);
-
 void pall_instruction(stack_t **stack, char **tokens);
-
-/* task 2 */
 void pint_instruction(stack_t **stack, char **tokens);
 void pop_instruction(stack_t **stack, char **tokens);
 void swap_instruction(stack_t **stack, char **tokens);
+
+/* arithmetic */
 void add_instruction(stack_t **stack, char **tokens);
+void sub_instruction(stack_t **stack, char **tokens);
+void mul_instruction(stack_t **stack, char **tokens);
+void div_instruction(stack_t **stack, char **tokens);
+void mod_instruction(stack_t **stack, char **tokens);
 
 #endif /* MAIN_H */
