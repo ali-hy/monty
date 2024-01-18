@@ -1,4 +1,4 @@
-#include "main.h"
+#include "monty.h"
 /**
  * stack_node - stack_t constructor
  * @value: value of stack_node
@@ -8,16 +8,16 @@
  */
 stack_t *stack_node(int value, stack_t *prev, stack_t *next)
 {
-	stack_t *res = malloc(sizeof(stack_t));
+    stack_t *res = malloc(sizeof(stack_t));
 
-	if (res == NULL)
-		return (NULL);
+    if (res == NULL)
+        return (NULL);
 
-	res->n = value;
-	res->prev = prev;
-	res->next = next;
+    res->n = value;
+    res->prev = prev;
+    res->next = next;
 
-	return (res);
+    return (res);
 }
 
 /**
@@ -28,9 +28,9 @@ stack_t *stack_node(int value, stack_t *prev, stack_t *next)
  */
 void push(stack_t **stack, int value)
 {
-	stack_t *new_node = stack_node(value, NULL, *stack);
+    stack_t *new_node = stack_node(value, NULL, *stack);
 
-	if ((*stack))
-		(*stack)->prev = new_node;
-	*stack = new_node;
+    if ((*stack))
+        (*stack)->prev = new_node;
+    *stack = new_node;
 }
