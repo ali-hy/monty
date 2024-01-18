@@ -3,6 +3,6 @@
 pall
 
 push 2
-push abc
+pint
 pall
 hehe

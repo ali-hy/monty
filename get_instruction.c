@@ -8,17 +8,13 @@
 void (*opcode_f(char *opcode))(stack_t **stack, char **tokens)
 {
 	if (strcmp(opcode, "push") == 0)
-	{
 		return (push_instruction);
-	}
 	else if (strcmp(opcode, "pall") == 0)
-	{
 		return (pall_instruction);
-	}
+	else if (strcmp(opcode, "pint") == 0)
+		return (pint_instruction);
 	else
-	{
 		return (NULL);
-	}
 }
 
 /**

@@ -7,6 +7,7 @@
  */
 void pint_instruction(stack_t **stack, char **tokens)
 {
+	UNUSED(tokens);
 	if (*stack == NULL)
 		print_error("can't pint, stack empty");
 	printf("%d\n", (*stack)->n);
