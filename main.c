@@ -25,7 +25,8 @@ int main(int argc, char *argv[])
 			break;
 
 		instruction = get_instruction(tokens);
-		instruction->f(&stack, tokens);
+		if (instruction)
+			instruction->f(&stack, tokens);
 
 		free(instruction);
 		free_string_array(tokens);

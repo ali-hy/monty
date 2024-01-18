@@ -7,6 +7,7 @@
 void print_error(char *msg)
 {
 	fprintf(stderr, "L%d: %s\n", *line_num_global(), msg);
+	exit(EXIT_FAILURE);
 }
 
 /**
@@ -25,7 +26,6 @@ void unknown_instruction_error(char *opcode)
 void usage_error(void)
 {
 	fprintf(stderr, "USAGE: monty file\n");
-	exit(EXIT_FAILURE);
 }
 
 /**
@@ -44,5 +44,4 @@ void cant_open_file(char *f_name)
 void malloc_failed(void)
 {
 	print_error("Error: malloc failed");
-	exit(EXIT_FAILURE);
 }
