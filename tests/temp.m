@@ -1,3 +1,4 @@
+pall
 push 3
 pall
 push 2

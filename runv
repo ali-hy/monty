@@ -8,5 +8,5 @@ fi
 
 ./comp
 if [ $? = 0 ]; then
-	valgrind --leak-check=full ./monty "$filename"
+	valgrind --leak-check=full --show-leak-kinds=all ./monty "$filename"
 fi

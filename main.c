@@ -10,7 +10,7 @@ int main(int argc, char *argv[])
 {
 	char **tokens = NULL;
 	instruction_t *instruction = NULL;
-	stack_t *stack = NULL;
+	stack_t *stack = NULL, *next = NULL;
 
 	if (argc != 2)
 		usage_error();
@@ -28,8 +28,18 @@ int main(int argc, char *argv[])
 		instruction->f(&stack, tokens);
 
 		free(instruction);
+		free_string_array(tokens);
+		tokens = NULL;
 		instruction = NULL;
 	}
 
+	while (stack)
+	{
+		next = stack->next;
+		free(stack);
+		stack = next;
+	}
+
+	fclose(*input_global());
 	return (EXIT_SUCCESS);
 }
