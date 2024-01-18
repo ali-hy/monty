@@ -1,12 +1,12 @@
 #!/bin/bash
 filename=""
 if [ -n "$1" ]; then
-	filename="$1"
+    filename="$1"
 else
-	filename="./tests/temp.m"
+    filename="./bytecodes/temp.m"
 fi
 
 ./comp
 if [ $? = 0 ]; then
-	./monty "$filename"
+    ./monty "$filename"
 fi

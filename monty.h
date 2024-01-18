@@ -86,9 +86,13 @@ int add(stack_t **);
 instruction_t *get_instruction(char **);
 int execute_instruction(instruction_t *);
 
+/* task 1 */
 void push_instruction(stack_t **stack, char **tokens);
 void push_usage_error(void);
 
 void pall_instruction(stack_t **stack, char **tokens);
+
+/* task 2 */
+void pint_instruction(stack_t **stack, char **tokens);
 
 #endif /* MAIN_H */
