@@ -6,6 +6,7 @@
 void push_usage_error(void)
 {
 	print_error("usage: push integer");
+	exit(EXIT_FAILURE);
 }
 
 /**
