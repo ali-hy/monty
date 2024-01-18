@@ -7,6 +7,8 @@
  */
 void (*opcode_f(char *opcode))(stack_t **stack, char **tokens)
 {
+	if (opcode[0] == '#')
+		return (NULL);
 	if (strcmp(opcode, "push") == 0)
 		return (push_instruction);
 	else if (strcmp(opcode, "pall") == 0)
