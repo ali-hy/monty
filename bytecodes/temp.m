@@ -7,3 +7,8 @@ push 1
 pint
 pop
 pall
+pop
+pall
+pop
+pall
+pop
