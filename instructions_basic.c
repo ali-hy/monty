@@ -52,3 +52,22 @@ void pop_instruction(stack_t **stack, char **tokens)
 		(*stack)->prev = NULL;
 	free(temp);
 }
+
+/**
+ * swap_instruction - function for 'swap' opcode
+ * swap the top two nodes
+ * @stack: ...
+ * @tokens: ...
+ */
+void swap_instruction(stack_t **stack, char **tokens)
+{
+	int tmp;
+
+	UNUSED(tokens);
+	if (*stack == NULL || (*stack)->next == NULL)
+		print_error("can't swap, stack too short");
+
+	tmp = (*stack)->n;
+	(*stack)->n = (*stack)->next->n;
+	(*stack)->next->n = tmp;
+}

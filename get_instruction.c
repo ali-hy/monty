@@ -15,6 +15,8 @@ void (*opcode_f(char *opcode))(stack_t **stack, char **tokens)
 		return (pint_instruction);
 	else if (strcmp(opcode, "pop") == 0)
 		return (pop_instruction);
+	else if (strcmp(opcode, "swap") == 0)
+		return (swap_instruction);
 	else
 		return (NULL);
 }
