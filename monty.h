@@ -22,9 +22,9 @@
  */
 typedef struct stack_s
 {
-	int n;
-	struct stack_s *prev;
-	struct stack_s *next;
+    int n;
+    struct stack_s *prev;
+    struct stack_s *next;
 } stack_t;
 
 /**
@@ -37,8 +37,8 @@ typedef struct stack_s
  */
 typedef struct instruction_s
 {
-	char *opcode;
-	void (*f)(stack_t **stack, char **tokens);
+    char *opcode;
+    void (*f)(stack_t **stack, char **tokens);
 } instruction_t;
 
 /**
@@ -50,8 +50,8 @@ typedef struct instruction_s
  */
 typedef struct error_s
 {
-	int line_num;
-	char *message;
+    int line_num;
+    char *message;
 } error_t;
 
 /* UTILS */
@@ -83,7 +83,7 @@ int pint(stack_t **);
 int add(stack_t **);
 
 /* INSTRUCTIONS */
-instruction_t *get_instruction();
+instruction_t *get_instruction(char **);
 int execute_instruction(instruction_t *);
 
 void push_instruction(stack_t **stack, char **tokens);

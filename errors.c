@@ -16,6 +16,7 @@ void print_error(char *msg)
 void unknown_instruction_error(char *opcode)
 {
 	fprintf(stderr, "L%d: unknown instruction %s\n", *line_num_global(), opcode);
+	exit(EXIT_FAILURE);
 }
 
 /**
