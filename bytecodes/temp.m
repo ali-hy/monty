@@ -1,5 +1,5 @@
-             pall
-        push         3          
+pall
+push 3          
 pall
 
 push 2
@@ -8,13 +8,10 @@ pint
 
 
 pop
-push 1
+push 25
 pall
 swap
 pall
-pop
-pall
-pop
-pall
-pop
-swap
+
+add
+pint

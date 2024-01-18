@@ -96,5 +96,6 @@ void pall_instruction(stack_t **stack, char **tokens);
 void pint_instruction(stack_t **stack, char **tokens);
 void pop_instruction(stack_t **stack, char **tokens);
 void swap_instruction(stack_t **stack, char **tokens);
+void add_instruction(stack_t **stack, char **tokens);
 
 #endif /* MAIN_H */

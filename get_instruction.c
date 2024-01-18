@@ -17,8 +17,13 @@ void (*opcode_f(char *opcode))(stack_t **stack, char **tokens)
 		return (pop_instruction);
 	else if (strcmp(opcode, "swap") == 0)
 		return (swap_instruction);
-	else
+	else if (strcmp(opcode, "add") == 0)
+		return (add_instruction);
+	else if (strcmp(opcode, "nop") == 0)
 		return (NULL);
+
+	unknown_instruction_error(opcode);
+	return (NULL);
 }
 
 /**
@@ -42,9 +47,6 @@ instruction_t *get_instruction(char **tokens)
 
 	instruction->opcode = tokens[0];
 	instruction->f = opcode_f(instruction->opcode);
-
-	if (instruction->f == NULL)
-		unknown_instruction_error(instruction->opcode);
 
 	return (instruction);
 }

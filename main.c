@@ -25,7 +25,7 @@ int main(int argc, char *argv[])
 			break;
 
 		instruction = get_instruction(tokens);
-		if (instruction)
+		if (instruction && instruction->f)
 			instruction->f(&stack, tokens);
 
 		free(instruction);
