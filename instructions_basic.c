@@ -48,6 +48,7 @@ void pop_instruction(stack_t **stack, char **tokens)
 		print_error("can't pop an empty stack");
 
 	*stack = (*stack)->next;
-	(*stack)->prev = NULL;
+	if (*stack)
+		(*stack)->prev = NULL;
 	free(temp);
 }
